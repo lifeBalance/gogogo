@@ -1,4 +1,10 @@
-# Running Sum of 1d Array
+---
+title: Running Sum of 1d Array
+# 1 to 5 bananas. 1-2 easy, 3 medium, 4-5 hard. Leave it out for no rating.
+difficulty: 2
+tags: [array, prefix-sum]
+starter: running_sum.go
+---
 
 Given a list of integers `nums`, return a list where the element at index `i` is the sum of `nums[0]` through `nums[i]`.
 
