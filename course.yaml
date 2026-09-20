@@ -5,6 +5,15 @@ title: Go sample course
 runtime:
   name: Go 1.25
   image: golang:1.25
+  # go test compiles the standard library's testing tree from source, and a fresh VM has an
+  # empty build cache, so every run pays for it. Compiling one throwaway test here puts that
+  # work into the snapshot every run boots from: about six seconds becomes about four hundred
+  # milliseconds. GOTOOLCHAIN is written here too, so a go.mod asking for a toolchain this
+  # image does not have fails plainly instead of stalling with the network off.
+  setup:
+    - sh
+    - -c
+    - 'go env -w GOTOOLCHAIN=local && mkdir -p /warm && cd /warm && printf "module warm\ngo 1.25\n" > go.mod && printf "package warm\nfunc A() int { return 1 }\n" > a.go && printf "package warm\nimport \"testing\"\nfunc TestA(t *testing.T) { if A() != 1 { t.Fatal() } }\n" > a_test.go && go test ./... && rm -rf /warm'
   run: [go, run, "{file}"]
   test: [go, test, ./...]
   network: false
