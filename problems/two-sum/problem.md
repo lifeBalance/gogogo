@@ -1,4 +1,10 @@
-# Two Sum
+---
+title: Two Sum
+# 1 to 5 bananas. 1-2 easy, 3 medium, 4-5 hard. Leave it out for no rating.
+difficulty: 1
+tags: [array, hash-map]
+starter: two_sum.go
+---
 
 Given a list of integers `nums` and an integer `target`, return the indices of the two numbers that add up to `target`.
 
