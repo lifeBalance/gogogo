@@ -1,0 +1,4 @@
+title: Running Sum of 1d Array
+difficulty: easy
+tags: [array, prefix-sum]
+starter: running_sum.go
