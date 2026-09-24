@@ -17,17 +17,17 @@ Nothing. The course runs on the `golang:1.25` image in an isolated virtual machi
 
 ## Your progress
 
-1 of 3 solved.
+3 of 3 solved.
 
 ### Warm-up
 
 | Exercise | Result | Attempts |
 | --- | --- | --- |
-| [Two Sum](solutions/two-sum/two_sum.go) | Solved | 4 |
-| Contains Duplicate | — | 0 |
+| Two Sum | Solved | 1 |
+| [Contains Duplicate](solutions/contains-duplicate/contains_duplicate.go) | Solved | 1 |
 
 ### Prefix sums
 
 | Exercise | Result | Attempts |
 | --- | --- | --- |
-| Running Sum of 1d Array | — | 0 |
+| [Running Sum of 1d Array](solutions/running-sum/running_sum.go) | Solved | 2 |
