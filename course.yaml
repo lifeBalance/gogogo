@@ -13,12 +13,16 @@ runtime:
   setup:
     - sh
     - -c
-    - 'go env -w GOTOOLCHAIN=local && mkdir -p /warm && cd /warm && printf "module warm\ngo 1.25\n" > go.mod && printf "package warm\nfunc A() int { return 1 }\n" > a.go && printf "package warm\nimport \"testing\"\nfunc TestA(t *testing.T) { if A() != 1 { t.Fatal() } }\n" > a_test.go && go test ./... && rm -rf /warm'
+    - 'go env -w GOTOOLCHAIN=local && mkdir -p /warm && cd /warm && printf
+      "module warm\ngo 1.25\n" > go.mod && printf "package warm\nfunc A() int {
+      return 1 }\n" > a.go && printf "package warm\nimport \"testing\"\nfunc
+      TestA(t *testing.T) { if A() != 1 { t.Fatal() } }\n" > a_test.go && go
+      test ./... && rm -rf /warm'
   run: [go, run, "{file}"]
   test: [go, test, ./...]
   network: false
 sections:
   - title: Warm-up
-    problems: [two-sum, contains-duplicate]
+    problems: [hello-world, two-sum, contains-duplicate, foo]
   - title: Prefix sums
     problems: [running-sum]
